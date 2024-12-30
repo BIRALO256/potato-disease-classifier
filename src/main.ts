@@ -1,7 +1,17 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import router from "./router";
 import "./assets/styles.css";
-import './firebase';
+import { createPinia } from "pinia"; // Import createPinia
+import router from "./router";
 
-createApp(App).use(router).mount("#app");
+// Create the Vue app and use Pinia and Router
+const app = createApp(App);
+
+// Use Pinia for state management
+app.use(createPinia());
+
+// Use Vue Router
+app.use(router);
+
+// Mount the app to the DOM
+app.mount("#app");
